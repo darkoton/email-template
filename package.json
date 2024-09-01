@@ -1,0 +1,17 @@
+{
+  "name": "email-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./builder/buildFile.js dev",
+    "build": "node ./builder/buildFile.js build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "html-minifier-terser": "^7.2.0",
+    "inline-css": "^4.0.2"
+  }
+}
