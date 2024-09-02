@@ -18,9 +18,7 @@ const uploadFile = require('./modules/upload-file');
 const pathToUrl = require('./modules/path-to-url');
 
 function watcher() {
-  console.log(1);
-
-  validator();
+  inlineCss();
 }
 
 if (mode === 'dev') {
