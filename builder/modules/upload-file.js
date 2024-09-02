@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const db = require(path.join(path.resolve(), 'builder', 'data', 'files.json'));
+let db = require(path.join(path.resolve(), 'builder', 'data', 'files.json'));
 
 const apiKey = '6d207e02198a847aa98d0a2a901485a5';
 const apiUrl = 'https://freeimage.host/api/1/upload';
