@@ -18,6 +18,8 @@ async function pathToUrl(callback) {
 
   fs.writeFileSync(path.join(global.builder.pathBuild, 'index.html'), html);
 
+  global.builder.plugins.server.reload();
+
   console.log('Complete "Path to Url"');
 
   if (callback) {
