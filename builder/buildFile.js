@@ -1,5 +1,7 @@
 const path = require('path');
 const browserSync = require('browser-sync').create('My Server');
+const config = require(path.join(path.resolve(), 'builder', 'builder.config.json'));
+const defaultConfig = require(path.join(path.resolve(), 'builder', 'data', 'config.default.json'));
 const args = process.argv.slice(2);
 const mode = args[0];
 
@@ -8,6 +10,13 @@ global.builder = {
   pathBuild: path.join(__dirname, '../', 'dist'),
   plugins: {
     server: browserSync,
+  },
+  config: name => {
+    if (config[name]) {
+      return config[name];
+    } else {
+      return defaultConfig[name];
+    }
   },
 };
 

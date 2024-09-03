@@ -9,7 +9,8 @@ async function pathToUrl(callback) {
     return new Promise((resolve, reject) => {
       const escapedFileName = file.name.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
       const re = new RegExp(escapedFileName, 'g');
-      html = html.replace(re, file.url);
+      html = html.replace(re, file[global.builder.config('image')]);
+
       resolve();
     });
   });

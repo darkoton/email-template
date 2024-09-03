@@ -12,6 +12,7 @@
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "html-minifier-terser": "^7.2.0",
-    "inline-css": "^4.0.2"
+    "inline-css": "^4.0.2",
+    "mime-types": "^2.1.35"
   }
 }
