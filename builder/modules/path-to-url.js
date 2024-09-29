@@ -3,7 +3,7 @@ const fs = require('fs');
 const db = require(path.join(path.resolve(), 'builder', 'data', 'files.json'));
 
 async function pathToUrl(callback) {
-  let html = fs.readFileSync(path.join(global.builder.pathSourse, 'index.html'), 'utf-8');
+  let html = fs.readFileSync(path.join(global.builder.pathBuild, 'index.html'), 'utf-8');
 
   const promises = db.map(file => {
     return new Promise((resolve, reject) => {
