@@ -9,6 +9,7 @@ async function validHtml(callback) {
     preserveMediaQueries: true,
     applyWidthAttributes: true,
     applyTableAttributes: true,
+    removeHtmlSelectors: true
   };
   const result = await inlineCss(html, options);
 

@@ -25,6 +25,7 @@ const server = require('./modules/server');
 const minify = require('./modules/minify');
 const uploadFile = require('./modules/upload-file');
 const pathToUrl = require('./modules/path-to-url');
+const closeTags = require('./modules/close-tags');
 
 function watcher() {
   inlineCss(uploadFile.bind(this, pathToUrl));
@@ -36,5 +37,10 @@ if (mode === 'dev') {
 }
 
 if (mode === 'build') {
-  inlineCss(uploadFile.bind(this, pathToUrl.bind(this, minify)));
+  inlineCss(uploadFile.bind(this, pathToUrl.bind(this, closeTags.bind(this, minify))));
+}
+
+if (mode === 'test') {
+  // inlineCss(uploadFile.bind(this, pathToUrl.bind(this, minify)));
+  closeTags();
 }
