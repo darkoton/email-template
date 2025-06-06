@@ -3,7 +3,10 @@ const path = require('path');
 const fs = require('fs');
 
 async function validHtml(callback) {
-  const html = fs.readFileSync(path.join(global.builder.pathSourse, 'index.html'), 'utf-8');
+  const css = fs.readFileSync(path.join(global.builder.pathSourse, 'style.css'), 'utf-8');
+  const html = fs.readFileSync(path.join(global.builder.pathSourse, 'index.html'), 'utf-8').replace('<!-- IMPORT style.css -->', `
+    <style type="text/css">${css}</style>
+    `);
   const options = {
     url: global.builder.pathBuild,
     preserveMediaQueries: true,
